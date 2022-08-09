@@ -1,0 +1,30 @@
+== Changelog ==
+
+@version 0.9
+1. Updated free vs pro tab.
+2. Fixed service section style issue in responsive view.
+
+@version 0.8
+1. Updated the readme file.
+
+@version 0.7
+1. Fixed site title and logo design issue.
+2. Added the recommended plugin for WooCommerce on options page.
+
+@Version 0.6
+1. Fixed blog section empty markup issue.
+
+@Version 0.5
+1. Fixed the wordpress 5.8 widgets design issues.
+
+@Version 0.4
+1. Fixed the theme check warnings.
+
+@Version 0.3
+1. Fixed strings as per i18n.
+
+@Version 0.2
+1. Fixed some typo.
+
+@Version 0.1
+1. Initial Release.

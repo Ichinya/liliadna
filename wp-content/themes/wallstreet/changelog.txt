@@ -1,5 +1,28 @@
 == Changelog ==
-
+@version 2.5
+1. Added google font locally feature.
+@version 2.4
+1. Added header slider feature.
+2. Added help docs link in customizer.
+@version 2.3.2
+1. Removed license box.
+@version 2.3.1
+1. Fixed theme mode feature issue.
+@version 2.3
+1. Added header layout and background settings. 
+2. Added header container width, enable/disable search and cart icons settings.
+3. Added color & typography settings for menu.
+@version 2.2.1
+1. Fixed customizer theme mode issue for child themes.
+@version 2.2
+1. Added Elementor Demo Import Feature.
+2. Added theme mode setting in customizer.
+3. Added color & typography setting for the site title & tagline.
+@version 2.1
+1. Added logo layout setting.
+2. Added site title and tagline toggle setting.
+@version 2.0.7
+1. Added logo width setting.
 @version 2.0.6
 1. Updated free vs pro tab.
 2. Fixed service section style issue in responsive view.

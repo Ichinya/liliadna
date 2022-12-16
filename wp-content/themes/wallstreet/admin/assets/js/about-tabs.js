@@ -35,4 +35,9 @@ jQuery(document).ready(function() {
        jQuery('.wallstreet-nav-tabs li a[href="#changelog"]').click();
     });
 
+     jQuery(".wallstreet-custom-class").click(function(event){
+       event.preventDefault();
+       jQuery('.wallstreet-nav-tabs li a[href="#wall_one_click_demo_import"]').click();
+    });
+
 });

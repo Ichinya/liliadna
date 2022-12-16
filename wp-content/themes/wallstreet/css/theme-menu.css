@@ -8,16 +8,16 @@
     border-style: none;
     border-width: 0px;
     padding: 5px 0;
-	border-color: none;
+    border-color: none;
 }
 .navbar-brand {
-	font-family: 'Roboto';
-	font-weight:300;
+    font-family: 'Roboto';
+    font-weight:300;
     font-size: 40px;
     height: auto;
     line-height: 40px;
-	padding: 25px 15px 25px 15px;
-	margin-right: 50px;
+    padding: 25px 15px 25px 15px;
+    margin-right: 50px;
 }
 
      .logo-link-url .navbar-brand {
@@ -37,22 +37,22 @@
 .navbar-inverse {
     background-color: rgba(0, 0, 0, 0.6);
     border-bottom: 0;
-	border-top: 0;
-	border-right: 0;
-	border-left: 0;
-	padding: 0;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    padding: 0;
 }
 .navbar {
     border-radius: 0px;
-	margin-bottom: 0px;
-	min-height: 100px;
+    margin-bottom: 0px;
+    min-height: 100px;
 }
 .navbar-wrapper {
-	position: absolute;
-	right: 0;
-	left: 0;
-	margin-top: 0px;
-	z-index: 20;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-top: 0px;
+    z-index: 20;
 }
 .navbar .navbar-nav > .active > a,
 .navbar .navbar-nav > .active > a:hover,
@@ -62,11 +62,11 @@
 .navbar .navbar-nav > .open > a,
 .navbar .navbar-nav > .open > a:hover,
 .navbar .navbar-nav > .open > a:focus {
-	color: #FFFFFF;
+    color: #FFFFFF;
 }
 /* .navbar .navbar-nav > li > a:hover,
 .navbar .navbar-nav > li > a:focus {
-	color: #FFFFFF;
+    color: #FFFFFF;
 } */
 .navbar .navbar-nav > li {
     margin-right: 0px;
@@ -75,17 +75,17 @@
 .navbar .navbar-nav > li > a {
     line-height: 20px;
     padding: 40px 19px;
-	border-radius: 0px 0px 0px 0px;
-	color: #ffffff;
-	font-family:'Roboto';
-	font-weight:400;
-	font-size: 16px;
-	
+    border-radius: 0px 0px 0px 0px;
+    color: #ffffff;
+    font-family:'Roboto';
+    font-weight:400;
+    font-size: 16px;
+    
 }
 .nav {
     /* position: relative; 
     top: 20px;*/
-	margin-top: 0px;
+    margin-top: 0px;
 }
 .navbar-collapse {
     max-height: 100%;
@@ -93,26 +93,26 @@
  
 /*Dropdown Menus & Submenus Css----------------------------------------------------------*/
 .dropdown-menu {
-	background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 0;
-	min-width: 235px;
-	border-radius: 0px;
-	box-shadow: 0;
-	border: 0 none;
-	/* box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.7); */
+    min-width: 235px;
+    border-radius: 0px;
+    box-shadow: 0;
+    border: 0 none;
+    /* box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.7); */
 }
 .dropdown-menu > li > a {
     color: #ffffff;
     font-family:'Roboto';
-	font-weight:400;
+    font-weight:400;
     font-size: 15px;
     line-height: 20px;
     padding: 15px 20px;
-	transition: color 0.2s ease-in-out 0s;
+    transition: color 0.2s ease-in-out 0s;
 }
 .dropdown-menu > li > a:last-chlid {
-	border-bottom: 0px;
-	border-bottom: 0;
+    border-bottom: 0px;
+    border-bottom: 0;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
@@ -205,7 +205,7 @@
 .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     background-color: #00c2a9; 
 }}
-.logo-link-url { display: inline-block;padding:15px 15px 12px 15px;}
+
 .logo-link-url h2{display: inline-block;}
 @media (max-width: 768px){
 .navbar-header {

@@ -22,6 +22,8 @@ function wallstreet_agency_theme_css() {
     wp_enqueue_style('bootstrap', WALLSTREET_AGENCY_PARENT_TEMPLATE_DIR_URI . '/css/bootstrap.css');
     wp_dequeue_style('wallstreet-default', WALLSTREET_AGENCY_PARENT_TEMPLATE_DIR_URI . '/css/default.css');
     wp_enqueue_style('wallstreet_agency-default', WALLSTREET_AGENCY_TEMPLATE_DIR_URI . '/css/default.css');
+    
+    require( WALLSTREET_AGENCY_TEMPLATE_DIR . '/functions/script/custom_style.php' );
 }
 
 add_action('after_setup_theme', 'wallstreet_agency_theme_setup');

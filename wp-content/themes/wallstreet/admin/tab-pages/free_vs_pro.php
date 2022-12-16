@@ -13,6 +13,18 @@
 					</header>
 					<ul class="feature">
 						<li>
+							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Theme Mode (Customizer / Elementor Ready)','wallstreet' ); ?></span>
+							<p><?php esc_html_e( 'With the help of this setting, you can customize your theme easily.','wallstreet' ); ?></p>
+						</li>
+						<li>
+							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Header Settings','wallstreet' ); ?></span>
+							<p><?php esc_html_e( 'With the help of this setting, you can customize your header easily.','wallstreet' ); ?></p>
+						</li>
+						<li>
+							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Site Identity Settings','wallstreet' ); ?></span>
+							<p><?php esc_html_e( 'With the help of this setting, you can customize your logo, site title and tagline easily.','wallstreet' ); ?></p>
+						</li>
+						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Frontpage Sections','wallstreet' ); ?></span>
 							<p><?php esc_html_e( 'You will find a number of sections on the front page.','wallstreet' ); ?></p>
 						</li>
@@ -76,7 +88,10 @@
 						<h2><?php echo esc_html__('Free','wallstreet'); ?></h2>
 					</header>
 					<ul class="feature">
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e("Top Header, Banner, Services [3 Services], Portfolio, Latest News","wallstreet"); ?> </li>
+						<li><span class="dashicons-before dashicons-yes green"></span></li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e("Header Presets[3 layouts], Header container width, Enable/disable search and cart icon ","wallstreet"); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e("Logo, logo width, logo layouts, Enable/disable site title and tagline","wallstreet"); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e("Top Header, Banner/Slider with shortcode, Services [3 Services], Portfolio, Latest News","wallstreet"); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e('Homepage Template and Full-Width Page Template','wallstreet'); ?> </li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
@@ -100,6 +115,9 @@
 						<h2><?php echo esc_html_e('Pro','wallstreet'); ?></h2>
 					</header>
 					<ul class="feature">
+						<li><span class="dashicons-before dashicons-yes green"></span></li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e("Header Presets[6 layouts], Header container width, Enable/disable search and cart icon ","wallstreet"); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php esc_html_e("Logo, logo width, logo layouts, Enable/disable site title and tagline","wallstreet"); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:19px"><?php esc_html_e("Top Header, Slider [Unlimited Slides], Services [Unlimited], Portfolio [Unlimited Projects], Testimonials, Latest News, Theme feature and Clients","wallstreet"); ?></li>
 						<li style="font-size:16px; line-height:25px; padding:18px">
 						<?php esc_html_e("About Us, Services, Portfolio, Blog Left & Right Sidebars, Blog Full Width, Page Full Width, Contact Page and much more.","wallstreet"); ?></li>

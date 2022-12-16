@@ -1,15 +1,40 @@
 <?php
 function wallstreet_blog_customizer( $wp_customize ) {
-	
-	//Blog Heading section 
-	$wp_customize->add_section(
-        'blog_setting',
-        array(
-            'title' => esc_html__('Homepage blog settings','wallstreet'),
-			'priority'   => 700,
-			
-			)
-    );
+	$theme = wp_get_theme();
+	if( ($theme->name == 'Wallstreet' || $theme->name == 'Wallstreet child' || $theme->name == 'Wallstreet Child')) {
+		if((get_theme_mod('wallstreet_theme_mode','advance_mode') == 'advance_mode') && ((get_option('wallstreet_user', 'new_user') == 'new_user') || (get_option('wallstreet_user', 'new') == 'new') ) ) {
+			//Blog Heading section 
+			$wp_customize->add_section(
+		        'blog_setting',
+		        array(
+		            'title' => esc_html__('Homepage blog settings','wallstreet'),
+					'priority'   => 700,
+					'active_callback'   =>  'wallstreet_theme_mode_callback'
+					)
+		    );
+		}
+		else {
+			//Blog Heading section 
+			$wp_customize->add_section(
+		        'blog_setting',
+		        array(
+		            'title' => esc_html__('Homepage blog settings','wallstreet'),
+					'priority'   => 700,
+					'active_callback'   =>  'wallstreet_theme_mode_callback'
+					)
+		    );
+		}
+	}
+	else {
+		//Blog Heading section 
+		$wp_customize->add_section(
+	        'blog_setting',
+	        array(
+	            'title' => esc_html__('Homepage blog settings','wallstreet'),
+				'priority'   => 700
+				)
+	    );
+	}
 
 	//Show and hide Blog section
 	$wp_customize->add_setting(

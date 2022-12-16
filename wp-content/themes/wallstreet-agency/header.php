@@ -4,6 +4,10 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<!-- Yandex Native Ads -->
+		<script>window.yaContextCb=window.yaContextCb||[]</script>
+		<script src="https://yandex.ru/ads/system/context.js" async></script>
+
 		<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

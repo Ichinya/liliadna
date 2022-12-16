@@ -4,7 +4,7 @@ Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, blog, footer-widgets
 Requires at least: 4.5
 Tested up to: 6.0
-Stable tag: 0.9
+Stable tag: 1.1
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,13 @@ Wallstreet Agency WordPress Theme is the child theme of Wallstreet Theme, Copyri
 Wallstreet Agency WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+@version 1.1
+1. Added color & typography setting for the site title & tagline.
+
+@version 1.0
+1. Added logo layout setting.
+2. Added site title and tagline toggle setting.
 
 @version 0.9
 1. Updated free vs pro tab.

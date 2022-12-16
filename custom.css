@@ -1,0 +1,96 @@
+.post .blog-post-img {
+	display: none;
+}
+
+.blog-detail-section .blog-post-img {
+	display: none;
+}
+
+.wp-block-kadence-tableofcontents {
+	color: #e5e5e5
+}
+
+.blog-post-title-wrapper > p {
+	text-indent: 25px;
+}
+
+.blog-post-title-wrapper > address {
+	color: #e5e5e5;
+}
+
+.su-spoiler-title {
+	color: #e5e5e5
+}
+
+a {
+	color: #FF8A00;
+}
+
+.blog-post-title-wrapper p, 
+.blog-post-title-wrapper-full p {
+	font-size: 18px;
+}
+
+.blog-post-title-wrapper figcaption {
+	color: #e5e5e5;
+}
+
+.comment-detail p {
+	font-size: 18px;
+}
+
+::marker {
+    color: #e5e5e5;
+}
+
+pre {
+	background-color: #2a2c33;
+	color: #e5e5e5;
+	border-color: #2a2c33;
+}
+
+.jp-relatedposts-post-date {
+	color: #e5e5e5;
+}
+
+.wp-block-verse{
+	font-size: 20px
+}
+
+.blog-post-title-wrapper > p > em > img {
+	display: unset;
+}
+
+.blog-post-title-wrapper > p {
+	min-height: 25px;
+}
+
+h1.category {
+	margin-left: 70px;
+}
+
+.category_description img {
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	position: absolute;
+  left: 25px;
+  top: 8px;
+  margin-right: 66px;
+}
+
+img.kws-smiley {
+	display: inline-block;
+}
+
+.blog-tags a {
+	padding-right: 0;
+}
+
+.post-password-form input[type="submit"]{
+	background-color: rgb(255, 138, 0);
+}
+
+blockquote.wp-block-quote {
+    color: #e5e5e5;
+}

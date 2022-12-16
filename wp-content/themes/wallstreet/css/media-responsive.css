@@ -1,8 +1,8 @@
 /* -----@Media screen Responsive css created by Shahid - Scientech IT ------------------------------------------------------------------------------------------------------- */
 @media only screen and (min-width: 1100px) and (max-width: 1200px){
-.navbar-wrapper { position: relative !important; }
-.navbar .navbar-nav > li > a { padding: 25px 19px; }
-.navbar-inverse { background-color: #2a2c33; }
+/*.navbar-wrapper { position: relative !important; }*/
+/*.navbar .navbar-nav > li > a { padding: 25px 19px; }*/
+/*.navbar-inverse { background-color: #2a2c33; }*/
 }
 
 @media only screen and (min-width: 960px) and (max-width: 1200px) {
@@ -162,7 +162,16 @@
 
 }
 
-
+@media only screen and (min-width: 480px) and (max-width: 820px) {
+	.navbar.navbar-wrapper {
+	position: relative;
+	right: 0;
+	left: 0;
+	margin-top: 0px;
+	z-index: 20;
+	}
+	.navbar-inverse { background-color: #2a2c33; }
+}
 
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -267,17 +276,11 @@
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
 	color: #ffffff;
 }
-.navbar-inverse { background-color: #2a2c33; }
+
 .navbar > .container .navbar-brand {
 	margin-left: 15px;
 }
-.navbar-wrapper {
-	position: relative;
-	right: 0;
-	left: 0;
-	margin-top: 0px;
-	z-index: 20;
-}
+
 /*About Page----------------*/
 .about-section img {
 	margin: 0 0 50px;
@@ -380,7 +383,7 @@
 
 @media only screen and (min-width: 200px) and (max-width: 1200px) {
 .navbar .navbar-nav > li > a {
-	padding: 15px 20px;
+	/*padding: 15px 20px;*/
 	font-size: 14px;
 	transition: all 0.4s ease 0s;
 }}

@@ -1,5 +1,6 @@
-<?php get_header(); ?>
-<!-- Page Title Section -->
+<?php get_header(); 
+if( get_theme_mod('wallstree_site_header_type', 'image') == 'image'){ ?>
+	<!-- Page Title Section -->
 <div class="page-mycarousel">
 	<img src="<?php echo esc_url(WALLSTREET_TEMPLATE_DIR_URI);?>/images/page-header-bg.jpg"  class="img-responsive">
 	<div class="container page-title-col">
@@ -19,8 +20,7 @@
                                 the_title();
                             }
                             ?>
-                        </h1>
-				
+                        </h1>			
 			</div>	
 		</div>
 	</div>
@@ -36,6 +36,19 @@
 		</div>
 	</div>
 </div>
+<?php }
+elseif(get_theme_mod('wallstree_site_header_type', 'image') == 'slider'){ 
+$wallstreet_slider_shortcode= get_theme_mod('wallstreet_post_slider_shortcode' ); ?>
+<div class="page-mycarousel">
+	<?php
+ echo do_shortcode($wallstreet_slider_shortcode);  ?>
+</div>
+<?php }
+else{ ?>
+<div class="pageMycarousel"></div>
+<?php }
+
+ ?>
 <!-- /Page Title Section -->
 
 <!-- Blog & Sidebar Section -->

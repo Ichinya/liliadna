@@ -16,92 +16,138 @@
  <?php do_action('wallstreet_custom_header', false); ?>
         
 <!--Header Logo & Menus-->
-<div class="navbar navbar-wrapper navbar-inverse navbar-static-top" role="navigation">
+	<?php if( get_theme_mod('header_layout','default') =='center' ) { ?>
+<div class="navbar navbar5 navbar-wrapper navbar-inverse navbar-static-top" role="navigation">
+<?php } else{ ?>
+	<div class="navbar navbar-wrapper navbar-inverse navbar-static-top" role="navigation">
+<?php } ?>
     <div class="container">
-	  
+
 		<!-- Brand and toggle get grouped for better mobile display -->
+		<?php if( get_theme_mod('header_layout','default') =='center' ) { ?>
+		<div class="navbar-header index3">
+		<?php } else { ?>
 		<div class="navbar-header">
+		<?php } ?>
 		<!-- logo -->
-		<?php 	if($wallstreet_current_options['text_title'] ==true){
-			set_theme_mod('header_text','true');
-			$wallstreet_text_title_options=get_option('wallstreet_pro_options');
-	        $wallstreet_text_title_options['text_title'] = false;
-	        update_option('wallstreet_pro_options', $wallstreet_text_title_options);
-		}
+			<?php 	if($wallstreet_current_options['text_title'] ==true){
+				set_theme_mod('header_text','true');
+				$wallstreet_text_title_options=get_option('wallstreet_pro_options');
+		        $wallstreet_text_title_options['text_title'] = false;
+		        update_option('wallstreet_pro_options', $wallstreet_text_title_options);
+			}
 
-                        if($wallstreet_current_options['text_title'] ==false && $wallstreet_current_options['upload_image_logo']!='' && !(has_custom_logo()) )
-		        { ?> 
-	            	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-	                	<img src="<?php echo esc_url($wallstreet_current_options['upload_image_logo']); ?>" style="height:<?php if($wallstreet_current_options['height']!='') { echo esc_attr($wallstreet_current_options['height']); }  else { "80"; } ?>px; width:<?php if($wallstreet_current_options['width']!='') { echo esc_attr($wallstreet_current_options['width']); }  else { "200"; } ?>px;" alt="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>" />
-	                </a>
-		            <?php
-	            }   
-				elseif(has_custom_logo() )
-				{ ?>
-					<a class="navbar-brand" href="<?php echo esc_url(home_url( '/' )); ?>">
-						<?php
-			            if ( has_custom_logo() ) 
-			            {	
-			            	$wallstreet_custom_logo_id = get_theme_mod( 'custom_logo' );
-							$wallstreet_post_status=get_post_status ( $wallstreet_custom_logo_id );
-	    					$wallstreet_logo_options = get_option('wallstreet_pro_options');
-					        $wallstreet_logo_options['upload_image_logo'] = '';
-					        update_option('wallstreet_pro_options', $wallstreet_logo_options);
-							$wallstreet_image = wp_get_attachment_image_src( $wallstreet_custom_logo_id , 'full' );
-							echo '<img src="'.esc_url($wallstreet_image[0]).'" alt="'.esc_attr(get_bloginfo( 'title' )).'" />';
-						}?>
-					</a>
-				<?php
-		        }
-				if($wallstreet_current_options['text_title'] ==true || get_theme_mod('header_text')==true)
-				{ 
-					if((get_option('blogname')!='') || (get_option('blogdescription')!=''))
-            		{
-	            		if(get_option('blogname')!='')
-	            		{?>
-	            			<div class="logo-link-url">
-                                <h2 style="margin: 0px;"><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><div class="wallstreet_title_head"><?php bloginfo( 'name' ); ?></div>
-	                			</a></h2>
-	                			<?php
-		                		$wallstreet_description = get_bloginfo( 'description', 'display' );
-				            	if(get_option('blogdescription')!='')
-				            	{
-				            		if ( $wallstreet_description || is_customize_preview() )
-					                { ?>
+	        if($wallstreet_current_options['text_title'] ==false && $wallstreet_current_options['upload_image_logo']!='' && !(has_custom_logo()) )
+	        { ?> 
+	        	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+	            	<img src="<?php echo esc_url($wallstreet_current_options['upload_image_logo']); ?>" style="height:<?php if($wallstreet_current_options['height']!='') { echo esc_attr($wallstreet_current_options['height']); }  else { "80"; } ?>px; width:<?php if($wallstreet_current_options['width']!='') { echo esc_attr($wallstreet_current_options['width']); }  else { "200"; } ?>px;" alt="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>" />
+	            </a>
+	            <?php
+	        }   
+			elseif(has_custom_logo() )
+			{ 
 
-				                	<p class="site-description"><?php echo $wallstreet_description; ?></p>
-				                	<?php
-				                	}
-				                }?>
-							</div>
-	            			
-	            		<?php
-	             		}
-	            		
-	            	} 
-	        	} 
-	        	
+				if( (get_theme_mod('logo_layout','logo-title-tagline') =='logo-title-tagline') || (get_theme_mod('logo_layout','logo-title-tagline') =='top-logo-title-tagline' ))
+
+				{
 				?>
-		<!-- /logo -->
-		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			<span class="sr-only"><?php echo esc_html_e('Toggle navigation','wallstreet'); ?></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		  </button>
+				<a class="navbar-brand" href="<?php echo esc_url(home_url( '/' )); ?>">
+					<?php
+		            if ( has_custom_logo() ) 
+		            {	
+		            	$wallstreet_custom_logo_id = get_theme_mod( 'custom_logo' );
+						$wallstreet_post_status=get_post_status ( $wallstreet_custom_logo_id );
+						$wallstreet_logo_options = get_option('wallstreet_pro_options');
+				        $wallstreet_logo_options['upload_image_logo'] = '';
+				        update_option('wallstreet_pro_options', $wallstreet_logo_options);
+						$wallstreet_image = wp_get_attachment_image_src( $wallstreet_custom_logo_id , 'full' );
+						  
+						 ?>
+						 
+				<img src="<?php echo esc_url($wallstreet_image[0]); ?>" class=" img-responsive custom-logo">
+				
+							
+						<?php	}?>
+						</a>
+					<?php
+				}
+	        }
+			if($wallstreet_current_options['text_title'] ==true || get_theme_mod('header_text')==true)
+			{
+
+				if( ( (get_option('blogname')!='') || (get_option('blogdescription')!='' ) ) && ( ($wallstreet_current_options['display_site_title'] ==true) || ($wallstreet_current_options['display_site_tagline'] == true) ))        
+				{ ?>
+	    			<div class="logo-link-url">
+					<?php
+	        		if(get_option('blogname')!='' && $wallstreet_current_options['display_site_title'] ==true ) {?>
+	        			
+	                    <h2 style="margin: 0px;"><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><div class="wallstreet_title_head"><?php bloginfo( 'name' ); ?></div>
+	        			</a></h2>
+
+	            	<?php }
+
+	            		$wallstreet_description = get_bloginfo( 'description', 'display' );
+		            	if(get_option('blogdescription')!='' && $wallstreet_current_options['display_site_tagline'] ==true)
+		            	{
+		            		if ( $wallstreet_description || is_customize_preview() )
+			                { ?>
+
+		                	<p class="site-description"><?php echo $wallstreet_description; ?></p>
+		                	<?php
+		                	}
+		                }
+	         		?>
+	        		</div>
+	        		<?php
+	        	} 
+	    	}
+	    	 
+			if( (get_theme_mod('logo_layout','logo-title-tagline')=='title-tagline-logo') || (get_theme_mod('logo_layout','logo-title-tagline')=='top-title-tagline-logo') )
+			{
+			?>
+				<a class="navbar-brand" href="<?php echo esc_url(home_url( '/' )); ?>">
+					<?php
+		            if ( has_custom_logo() ) 
+		            {	
+		            	$wallstreet_custom_logo_id = get_theme_mod( 'custom_logo' );
+						$wallstreet_post_status=get_post_status ( $wallstreet_custom_logo_id );
+						$wallstreet_logo_options = get_option('wallstreet_pro_options');
+				        $wallstreet_logo_options['upload_image_logo'] = '';
+				        update_option('wallstreet_pro_options', $wallstreet_logo_options);
+						$wallstreet_image = wp_get_attachment_image_src( $wallstreet_custom_logo_id , 'full' );
+						  
+						 ?>
+						 
+					<img src="<?php echo esc_url($wallstreet_image[0]); ?>" class=" img-responsive custom-logo">
+		
+					<?php } ?>
+				</a>
+			<?php
+			} 
+			if( get_theme_mod('header_layout','default') =='center' ) { ?>
+			</div>
+		    <?php } ?>
+			<!-- /logo -->
+		  	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only"><?php echo esc_html_e('Toggle navigation','wallstreet'); ?></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+		  	</button>
+		  <?php if( get_theme_mod('header_layout','default') !='center' ) { ?>
 		</div>
+		<?php } ?>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		<?php
-			wp_nav_menu( array(  
-					'theme_location' => 'primary',
-					'container'  => 'nav-collapse collapse navbar-inverse-collapse',
-					'menu_class' => 'nav navbar-nav navbar-right',
-					'fallback_cb' => 'wallstreet_fallback_page_menu',
-					'walker' => new wallstreet_nav_walker()
-					)
-				);	
-			?>
+         <?php 
+         get_template_part('menu-search'); 
+	
+		
+		?>
 		</div><!-- /.navbar-collapse -->	 		
 	</div>
 </div>
+<?php
+if (function_exists('webriti_companion_activate') && is_front_page() && !is_page_template('template-homepage.php')) {require_once('index-slider.php');
+}
+?>

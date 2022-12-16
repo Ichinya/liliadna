@@ -4,7 +4,7 @@ Template Name: Full Width Page
 */
 get_header(); ?>
 <!-- Page Title Section -->
-<?php get_template_part('index', 'breadcrumb'); ?>
+<?php if(!is_front_page()){ get_template_part('index', 'breadcrumb'); } ?>
 <!-- /Page Title Section -->
 <!-- Blog & Sidebar Section -->
 <div class="container" id="content">

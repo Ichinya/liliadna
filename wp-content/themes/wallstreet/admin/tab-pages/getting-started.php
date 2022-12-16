@@ -6,6 +6,20 @@
 <div id="getting_started" class="wallstreet-tab-pane active">
 	<div class="container-fluid">
 		<div class="row">
+			<div class="wallstreet-tab-pane-half wallstreet-tab-pane-first-half">
+				<div class="col-md-12 wallstreet-import-part">
+					<div>
+						<p style="margin-top: 16px; font-weight: 700;">
+							<?php _e( 'Wallstreet is now ready to import the Elementor dummy data, if you want to import dummy data, install & activating the "Demo Importer" plugin. If you want to make a website without importing dummy data You can use Our premade business template for this Use Theme mode Settings. For more details refer to this help <a href="https://help.webriti.com/themes/wallstreet/how-to-manage-theme-mode/">link</a>.', 'wallstreet' ); ?>
+						</p>
+						<p><a  href="#wall_one_click_demo_import" class="nav-tab wallstreet-custom-class import-tab-link"><?php esc_html_e( 'Go to Import','wallstreet');?></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
 			<div class="col-md-6">
 				<div class="wallstreet-tab-pane-half wallstreet-tab-pane-first-half">
 					<h3><?php esc_html_e( "Recommended Plugins", 'wallstreet' ); ?></h3>
@@ -48,13 +62,13 @@
 			<div class=" useful_box">
                 <div class="wallstreet-tab-pane-half wallstreet-tab-pane-first-half">
                 	<div class="col-md-6">
-	                    <a href="<?php echo esc_url('https://webriti.com/wallstreet-free'); ?>" target="_blank"  class="info-block">
+	                    <a href="<?php echo esc_url('https://wallstreet.webriti.com/'); ?>" target="_blank"  class="info-block">
 	                    	<div class="dashicons dashicons-desktop info-icon"></div>
 	                    	<p class="info-text"><?php echo esc_html__('Lite Demo','wallstreet'); ?></p>
 	                	</a>
                 	</div>
                 	<div class="col-md-6">
-	                    <a href="<?php echo esc_url('https://webriti.com/demo/wp/preview/?prev=wallstreet'); ?>" target="_blank"  class="info-block">
+	                    <a href="<?php echo esc_url('https://wallstreet-pro.webriti.com/'); ?>" target="_blank"  class="info-block">
 	                    	<div class="dashicons dashicons-book-alt info-icon"></div>
 	                    	<p class="info-text"><?php echo esc_html__('PRO Demo','wallstreet'); ?></p>
 	                    </a>

@@ -1,18 +1,5 @@
 jQuery(document).ready(function() {
      
-	 document.querySelectorAll('.comment-reply-link').forEach((node) => {node.addEventListener('click', ev=> {let el = ev.currentTarget; comment_parent.value = el.dataset.commentid })})
-
-     if (document.getElementById('id-C-A-386972-7')?.children.length > 0) {
-        console.log("убираем блок от JetPack");
-        document.getElementById('jp-relatedposts').style.display = 'none'
-        document.getElementById('jp-relatedposts').classList.add('hidden')
-     } else if (document.getElementById('id-C-A-386972-7')) {
-        console.log("убираем блок от Яндекса");
-        document.getElementById('id-C-A-386972-7').closest('div.blog-author').style.display = 'none'
-        document.getElementById('id-C-A-386972-7').closest('div.blog-author').classList.add('hidden')
-     }
-	 
-	 
       var width = Math.max(jQuery(window).width(), window.innerWidth);
        document.onload = wallstreet_function();
        wallstreet_navbarSubmenu(width);

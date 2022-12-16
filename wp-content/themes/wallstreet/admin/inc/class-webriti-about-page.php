@@ -17,7 +17,7 @@ if (!class_exists('Wallstreet_About_Page')) {
 		private $pro_link;
 		private $tabs;
 		private $action_count;
-		private $recommended_actions;
+		public $recommended_actions;
 
 		public static function get_instance() {
 
@@ -42,11 +42,12 @@ if (!class_exists('Wallstreet_About_Page')) {
 			
 			/* load welcome screen */
 			add_action( 'wallstreet_info_screen', array( $this, 'getting_started' ), 	    10 );
-			add_action( 'wallstreet_info_screen', array( $this, 'github' ), 		            40 );
-			add_action( 'wallstreet_info_screen', array( $this, 'welcome_free_pro' ), 				50 );
-			add_action( 'wallstreet_info_screen', array( $this, 'recommended_actions' ), 				50 );
+			add_action( 'wallstreet_info_screen', array( $this, 'github' ), 		            20 );
+			add_action( 'wallstreet_info_screen', array( $this, 'welcome_free_pro' ), 				30 );
+			add_action( 'wallstreet_info_screen', array( $this, 'recommended_actions' ), 				40 );
 			add_action( 'wallstreet_info_screen', array( $this, 'support_themes' ), 				50 );
-			add_action( 'wallstreet_info_screen', array( $this, 'changelog_themes' ), 				50 );
+			add_action( 'wallstreet_info_screen', array( $this, 'changelog_themes' ), 				60 );
+			add_action( 'wallstreet_info_screen', array( $this, 'one_click_demo_import' ), 				70 );
 					
 			}
 
@@ -56,7 +57,7 @@ if (!class_exists('Wallstreet_About_Page')) {
 	 */
 	public function style_and_scripts( $hook_suffix ) {
 
-		if ( 'appearance_page_wallstreet-welcome' == $hook_suffix ) {
+		if ( 'toplevel_page_wallstreet-welcome' == $hook_suffix ) {
 			
 			
 			wp_enqueue_style( 'wallstreet-info-css', WALLSTREET_TEMPLATE_DIR_URI . '/css/bootstrap.css' );
@@ -123,8 +124,22 @@ if (!class_exists('Wallstreet_About_Page')) {
 			$theme = $this->theme;
 			$count = $this->action_count;
 			$count = ($count > 0) ? '<span class="awaiting-mod action-count"><span>' . $count . '</span></span>' : '';
-			$title = sprintf(esc_html__('About wallstreet Theme', 'wallstreet'), esc_html($theme->get('Name')), $count);
-			add_theme_page(sprintf(esc_html__('Welcome to %1$s %2$s', 'wallstreet'), esc_html($theme->get('Name')), esc_html($theme->get('Version'))), $title, 'edit_theme_options', 'wallstreet-welcome', array($this, 'print_welcome_page'));
+			$title = sprintf(esc_html__('Wallstreet Panel', 'wallstreet'), esc_html($theme->get('Name')), $count);
+			add_menu_page(sprintf(esc_html__('Welcome to %1$s %2$s', 'wallstreet'), esc_html($theme->get('Name')), esc_html($theme->get('Version'))), $title, 'edit_theme_options', 'wallstreet-welcome', array($this, 'print_welcome_page'));
+
+			if (function_exists('webriti_companion_activate')) {
+				if(class_exists('OCDI_Plugin')):
+	                $wallstreet_ocdi=OCDI\OneClickDemoImport::get_instance();
+	                add_submenu_page(
+	                'wallstreet-welcome',
+	                esc_html__( 'Starter Sites', 'wallstreet' ), 
+	                esc_html__( 'Starter Sites', 'wallstreet' ), 
+	                'manage_options', 
+	                'one-click-demo-import',
+	                $wallstreet_ocdi->create_plugin_page()
+	                );
+	            endif;
+	        }
 		}
 
 		public function activation_admin_notice() {
@@ -306,6 +321,14 @@ if (!class_exists('Wallstreet_About_Page')) {
 		return wp_kses_post( $changelog );
 	}
 
+	/**
+     * One Click Demo Import
+     * 
+     */
+    public function one_click_demo_import() {
+        require_once( get_template_directory() . '/admin/tab-pages/one-click-demo-import.php' );
+    }
+
 		public function get_tabs_array() {
 			$tabs_array = array();
 			
@@ -324,9 +347,9 @@ if (!class_exists('Wallstreet_About_Page')) {
 
 			if(count($this->get_useful_plugins()) > 0){
 				$tabs_array[]	= 	array(
-						'link'      => 'useful_plugins',
-						'name'      => esc_html__('Why Upgrade to PRO?', 'wallstreet'),
-						'file_path' => get_template_directory() . '/admin/tab-pages/useful_plugins.php',
+					'link'      => 'useful_plugins',
+					'name'      => esc_html__('Why Upgrade to PRO?', 'wallstreet'),
+					'file_path' => get_template_directory() . '/admin/tab-pages/useful_plugins.php',
 				);
 			}
 			
@@ -346,6 +369,12 @@ if (!class_exists('Wallstreet_About_Page')) {
 					'link'      => 'changelog',
 					'name'      => esc_html__('Changelog', 'wallstreet'),
 					'file_path' => get_template_directory() . '/admin/tab-pages/changelog.php',
+			);
+
+			$tabs_array[]	= 	array(
+					'link'      => 'wall_one_click_demo_import',
+					'name'      => esc_html__('Demo Import', 'wallstreet'),
+					'file_path' => get_template_directory() . '/admin/tab-pages/one-click-demo-import.php',
 			);
 			
 			return $tabs_array;
@@ -390,7 +419,7 @@ if (!class_exists('Wallstreet_About_Page')) {
 						$action['title'] = $plugin['name'];
 					}
 
-					$link_and_is_done  = $this->get_plugin_buttion($plugin['slug'], $plugin['name'], $plugin['function']);
+					$link_and_is_done  = $this->get_plugin_buttion($plugin['slug'], $plugin['name'], $plugin['function'], $plugin['class']);
 					$action['link']    = $link_and_is_done['button'];
 					$action['is_done'] = $link_and_is_done['done'];
 					if (!$action['is_done'] && (!isset($actions_todo[$action['id']]) || !$actions_todo[$action['id']])) {
@@ -404,12 +433,17 @@ if (!class_exists('Wallstreet_About_Page')) {
 
 		}
 
-		public function get_plugin_buttion($slug, $name, $function) {
+		public function get_plugin_buttion($slug, $name, $function, $class) {
 			$is_done      = false;
 			$button_html  = '';
 			$is_installed = $this->is_plugin_installed($slug);
 			$plugin_path  = $this->get_plugin_basename_from_slug($slug);
-			$is_activeted = (function_exists($function)) ? true : false;
+			if($class==''):
+				$is_activeted = (function_exists($function)) ? true : false;
+			else:
+				$is_activeted = (class_exists($class)) ? true : false;
+			endif;
+
 			if (!$is_installed) {
 				$plugin_install_url = add_query_arg(
 					array(
@@ -556,25 +590,44 @@ add_filter('wallstreet_useful_plugins', 'wallstreet_useful_plugins_array');
 
 function wallstreet_recommended_plugins_array($plugins){
 	$plugins[] = array(
-					'name'     => esc_html__('Webriti Companion', 'wallstreet'),
-					'slug'     => 'webriti-companion',
-					'function'     => 'webriti_companion_activate',
-					'desc'     => esc_html__('It is highly recommended that you install the Webriti Companion plugin to have access to the advance Frontpage sections and other theme features', 'wallstreet'),
-				);
+		'name'     => esc_html__('Webriti Companion', 'wallstreet'),
+		'slug'     => 'webriti-companion',
+		'function'     => 'webriti_companion_activate',
+		'class'     => '',
+		'desc'     => esc_html__('It is highly recommended that you install the Webriti Companion plugin to have access to the advance Frontpage sections and other theme features', 'wallstreet'),
+	);
 				
 	$plugins[] = array(
-					'name'     => esc_html__('Contact Form 7', 'wallstreet'),
-					'slug'     => 'contact-form-7',
-					'function'     => 'wpcf7',
-					'desc'     => esc_html__('It is recommended that you install the Contact Form 7 plugin to show contact form on pages', 'wallstreet'),
-				);	
+		'name'     => esc_html__('Contact Form 7', 'wallstreet'),
+		'slug'     => 'contact-form-7',
+		'function'     => 'wpcf7',
+		'class'     => '',
+		'desc'     => esc_html__('It is recommended that you install the Contact Form 7 plugin to show contact form on pages', 'wallstreet'),
+	);	
 
 	$plugins[] = array(
-	                'name' => esc_html__('WooCommerce', 'wallstreet'),
-	                'slug' => 'woocommerce',
-	                'function' => 'WC',
-	                'desc' => esc_html__('To create a shop page you just need to install this plugin & activate it', 'wallstreet'),
-            	);		
+	    'name' => esc_html__('WooCommerce', 'wallstreet'),
+	    'slug' => 'woocommerce',
+	    'function' => 'WC',
+	    'class'     => '',
+	    'desc' => esc_html__('To create a shop page you just need to install this plugin & activate it', 'wallstreet'),
+	);
+
+	$plugins[] = array(
+	    'name' => esc_html__('One Click Demo Import', 'wallstreet'),
+	    'slug' => 'one-click-demo-import',
+	    'function' => '',
+	    'class'     => 'OCDI_Plugin',
+	    'desc' => esc_html__('It is recommended that you install & activate the One Click Demo Import plugin to import the default demo data and starter sites', 'wallstreet'),
+	);	
+
+	$plugins[] = array(
+		'name'     => 'Spice Post Slider',
+		'slug'     => 'spice-post-slider',
+		'function' => 'sps_fs',
+		'class'	   => '',
+		'desc'     => esc_html__('To display the posts in a beautiful slider with multiple options, install & activate this plugin.', 'wallstreet'),
+	);		
 	
 	return $plugins;
 }

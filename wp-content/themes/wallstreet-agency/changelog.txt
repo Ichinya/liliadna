@@ -1,5 +1,12 @@
 == Changelog ==
 
+@version 1.1
+1. Added color & typography setting for the site title & tagline.
+
+@version 1.0
+1. Added logo layout setting.
+2. Added site title and tagline toggle setting.
+
 @version 0.9
 1. Updated free vs pro tab.
 2. Fixed service section style issue in responsive view.

@@ -479,12 +479,22 @@ a.info-block:hover, a.info-block:active, a.info-block:focus{color:#333;}
     padding: 23px 28px;
     min-height: 350px;
 }
-#recommended_actions .seprate-plugin-box .action-inner {
+#recommended_actions .seprate-plugin-box .action-inner, #wall_one_click_demo_import .seprate-plugin-box .action-inner {
   margin-top: 10px;
 }
 .action.col-md-6:nth-child(2n+1) {
     clear: left;
 }
-#recommended_actions .action-list.row{
+#recommended_actions .action-list.row, #wall_one_click_demo_import .action-list.row {
     padding: 15px;
+}
+#getting_started .import-tab-link, #wall_one_click_demo_import .import-tab-link {
+    padding: 5px 8px;
+    background-color: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+}
+#getting_started .wallstreet-import-part, #wall_one_click_demo_import .wallstreet-import-part {
+    border: 5px solid #00c2a9;
+    padding: 30px;
 }

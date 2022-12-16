@@ -3,15 +3,15 @@
 Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, blog, footer-widgets
 Requires at least: 4.5
-Tested up to: 6.0
-Stable tag: 2.0.6
+Tested up to: 6.1.1
+Stable tag: 2.5
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-WallStreet is a Business WordPress Theme that contains a lot of features for customizing your website as you need. Already thousands of users loving this theme because it is designed for multiple businesses like corporates, firms, law firms, digital media agency, architecture firm, personal, portfolio and freelancer's website. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In WallStreet Lite, you can easily set Featured Banner / Slide, Social Icons in Header, Contact Information, Services, Portfolio, 4 column widgetized footer. Couple of page templates are added one is Homepage and the second one is full width page template. In the premium version, you will get 2 color skins Lite and Dark, 10 predefined color schemes, feature for creating your custom color scheme, an eye-catching slider, Services, Testimonial’s, Portfolio, Clients/ Sponsors, Blog Layouts, Layout Manager and Latest News. You will get Various page templates  like About, Service, Portfolio, Blog and Contact Us. The theme has supports for popular  plugins like WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium version of WallStreet theme comes with various locales. Other translations / locals yet to come. Check premium version theme demo at http://webriti.com/demo/wp/wallstreet
+WallStreet is a Business WordPress Theme that contains a lot of features for customizing your website as you need. Already thousands of users loving this theme because it is designed for multiple businesses like corporates, firms, law firms, digital media agency, architecture firm, personal, portfolio and freelancer's website. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In WallStreet Lite, you can easily set Featured Banner / Slide, Social Icons in Header, Contact Information, Services, Portfolio, 4 column widgetized footer. Couple of page templates are added one is Homepage and the second one is full width page template. In the premium version, you will get 2 color skins Lite and Dark, 10 predefined color schemes, feature for creating your custom color scheme, an eye-catching slider, Services, Testimonial’s, Portfolio, Clients/ Sponsors, Blog Layouts, Layout Manager and Latest News. You will get Various page templates  like About, Service, Portfolio, Blog and Contact Us. The theme has supports for popular  plugins like WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium version of WallStreet theme comes with various locales. Other translations / locals yet to come. Check the theme demo at https://wallstreet.webriti.com/
 
 == Installation ==
 
@@ -29,7 +29,30 @@ Wallstreet WordPress Theme, Copyright (C) 2015-2022, priyanshumittal
 Wallstreet WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
-
+@version 2.5
+1. Added google font locally feature.
+@version 2.4
+1. Added header slider feature.
+2. Added help docs link in customizer.
+@version 2.3.2
+1. Removed license box.
+@version 2.3.1
+1. Fixed theme mode feature issue.
+@version 2.3
+1. Added header layout and background settings. 
+2. Added header container width, enable/disable search and cart icons settings.
+3. Added color & typography settings for menu.
+@version 2.2.1
+1. Fixed customizer theme mode issue for child themes.
+@version 2.2
+1. Added Elementor Demo Import Feature.
+2. Added theme mode setting in customizer.
+3. Added color & typography setting for the site title & tagline.
+@version 2.1
+1. Added logo layout setting.
+2. Added site title and tagline toggle setting.
+@version 2.0.7
+1. Added logo width setting.
 @version 2.0.6
 1. Updated free vs pro tab.
 2. Fixed service section style issue in responsive view.
@@ -281,6 +304,21 @@ Customizer Notify:
 Copyright: (c) Mikesetzer
 License: Under GNU General Public License
 Source: https://github.com/mikesetzer/origintheme/tree/master/ti-customizer-notify
+
+Custom Slider, Image Radio & Text Radio Button
+Copyright: (c) Anthony Hortin
+License: Under GNU General Public License v2.0
+Source: https://github.com/maddisondesigns/customizer-custom-controls
+
+Customizer toggle control
+Copyright: (c) 2016 soderlind
+License: Under GNU General Public License v2.0
+Source: https://github.com/soderlind/class-customizer-toggle-control
+
+Customizer Tab Control:
+Copyright: (c) 2016 Codeinwp cristian-ungureanu
+License: MIT license
+Source: https://github.com/Codeinwp/customizer-controls/tree/master/customizer-tabs
 
 == Images ==
 

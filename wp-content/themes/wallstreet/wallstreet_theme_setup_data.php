@@ -10,7 +10,10 @@ function wallstreet_theme_data_setup()
 			'text_title'=>__('on','wallstreet'),
 			'upload_image_favicon'=>'',
 			'webrit_custom_css'=>'',
-
+			'display_site_title'=>true,
+			'display_site_tagline'=>true,
+			'enable_search_btn'=>false,
+			'enable_cart_btn'=>true,
 			//Featured Image Setting
 			'home_banner_enabled'=>__('on','wallstreet'),
 			'slider_title_one' => __('Lorem ipsum dolor sit amet','wallstreet'),

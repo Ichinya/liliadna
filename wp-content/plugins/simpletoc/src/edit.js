@@ -294,7 +294,7 @@ export default function Edit( { attributes, setAttributes } ) {
 								'simpletoc'
 							) }
 							help={ __(
-								'Add the css class "smooth-scroll" to the links. This enables smooth scrolling in some themes like GeneratePress.',
+								'Adds the following CSS to the HTML element: "scroll-behavior: smooth;"',
 								'simpletoc'
 							) }
 							checked={ attributes.add_smooth }
@@ -317,6 +317,21 @@ export default function Edit( { attributes, setAttributes } ) {
 								setAttributes( {
 									use_absolute_urls:
 										! attributes.use_absolute_urls,
+								} )
+							}
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Wrapper div', 'simpletoc' ) }
+							help={ __(
+								'Additionally adds the role "navigation" and ARIA attributes.',
+								'simpletoc'
+							) }
+							checked={ attributes.wrapper }
+							onChange={ () =>
+								setAttributes( {
+									wrapper: ! attributes.wrapper,
 								} )
 							}
 						/>

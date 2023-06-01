@@ -3,8 +3,8 @@ Contributors: MarcDK
 Tags: Gutenberg, block, TOC, Table of Contents, AMP
 Requires at least: 5.9
 Donate link: https://marc.tv/out/donate
-Tested up to: 6.1
-Stable tag: 5.0.53
+Tested up to: 6.2
+Stable tag: 6.0.4
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -23,16 +23,19 @@ SimpleTOC is open-source and developed on [GitHub Pages](https://github.com/mtoe
 
 = Features =
 
+* Designed for Gutenberg.
 * Zero configuration: Add the SimpleTOC block to your post and that's it. 
 * Minimal and valid HTML output.
 * No JavaScript or CSS added. Unless you activate the accordion menu.
-* Designed for Gutenberg.
 * Style SimpleTOC with Gutenberg's native group styling options.
 * Inherits the style of your theme.
+* Smooth scrolling effect using CSS. 
+* Optional ARIA Label and navigation role attributes.
 * Translated in [multiple languages](https://translate.wordpress.org/projects/wp-plugins/simpletoc/). Including German, Japanese, Chinese (Taiwan), Dutch, Brazilian Portuguese, French, Spanish and Latvia.
 
 = Customization = 
 
+* Administrators can utilize global settings to supersede the individual block settings.
 * Add background and text color with Gutenberg groups.
 * Native block support for wide and full width.
 * Control the maximum depth of the headings.
@@ -46,6 +49,24 @@ SimpleTOC is open-source and developed on [GitHub Pages](https://github.com/mtoe
 * Works with popular AMP plugins.
 
 == Changelog ==
+
+= 6.0.4 =
+* Fix: specific min/max values for could result in merged headlines.
+
+= 6.0.2 =
+* Fix: "Update failed" with error 500 when Rank Math is installed. 
+
+= 6.0.0 =
+* Feature: Added SimpleTOC global settings to override individual block configuration. 
+* Fix: Better output with well-formed HTML and consistent double quotation marks.
+* Fix: Refactored php code using GPT-4.
+
+= 5.0.56 =
+* Feature: Optional div wrapper with role=navigation and ARIA attributes. 
+* Fix: Removed deprecated php function 'utf8_decode'.
+
+= 5.0.55 = 
+* Feature: Better smooth-scrolling support. Thanks Clarus Dignus!
 
 = 5.0.53 = 
 * Fix: Prevent direct access to plugin files. Thanks rafaucau!
@@ -101,6 +122,10 @@ In Gutenberg, add a block and search for "SimpleTOC" or just "TOC". Please save 
 
 == Frequently Asked Questions ==
 
+= Configuring Global Settings in SimpleTOC =
+
+SimpleTOC allows you to configure global settings for your WordPress website. These settings can be enforced globally, overriding any block-level configurations that may exist. To access these settings, navigate to the SimpleTOC section of the WordPress Settings.
+
 = How do I add a background color to SimpleTOC using Gutenberg groups? =
 
 Select the block and select "group" in the context menu. Apply "background color", "link color" and "text color" to this group. SimpleTOC will inherit these styles. You would like to use this styled SimpleTOC group next time you write a post? Convert it to a reusable block.
@@ -115,11 +140,7 @@ You can convert your configured SimpleTOC block into a reusable block in Gutenbe
 
 = How to add a div tag wrapper to the TOC? =
 
-If you add a custom class to the SimpleTOC block in "Advanced" and then "Additional CSS Class(es)" a div with that class will be wrapped around the HTML output. You can force this with a filter, too.
-
-Example: 
-
-    add_filter( 'simpletoc_wrapper_enabled', '__return_true' );
+If you add a custom class to the SimpleTOC block in "Advanced" and then "Additional CSS Class(es)" a div with that class will be wrapped around the HTML output. 
 
 = How to allow developers to exclude specific headings programmatically? = 
 
@@ -156,6 +177,7 @@ I don’t see an easy solution at the moment. SimpleTOC is only a block that can
 6. SimpleTOC Advanced Features
 7. Gutenberg Heading block: Set a custom anchor  
 8. SimpleTOC hidden in the accordion menu.
+9. SimpleTOC global settings.
 
 == Credits ==
 
@@ -164,4 +186,3 @@ This plugin is forked from [pdewouters](https://github.com/pdewouters/gutentoc) 
 Many thanks to [Tom J Nowell](https://tomjn.com) and and Sally CJ who both helped me a lot with my questions over at wordpress.stackexchange.com
 
 Thanks to Quintus Valerius Soranus for inventing the Table of Contents around 100 BC. 
-
